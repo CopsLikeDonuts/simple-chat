@@ -1,0 +1,17 @@
+.Button {
+  margin-left: 8px;
+  padding: 8px;
+  min-width: 60px;
+  color: #FFFFFF;
+  background-color: #0e2a2b;
+  border: 1px solid #1d4747;
+  border-radius: 6px;
+
+  &:hover:enabled {
+    background-color: #5aae88;
+  }
+
+  &:disabled {
+    opacity: 0.4;
+  }
+}

@@ -1,0 +1,31 @@
+.ChatPageWrapper {
+  padding: 3.2rem 20%;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.ChatPageInputSection {
+  margin-top: 32px;
+  border-top: 1px solid #709090;
+  padding: 16px 20%;
+  display: flex;
+  align-items: center;
+}
+
+.ChatMessageInput {
+  resize: none;
+  padding: 8px;
+  border-radius: 12px;
+  background-color: #0e2a2b;
+  border: 1px solid #1d4747;
+  color: #FFFFFF;
+  width: 100%;
+  outline: none;
+  height: 52px;
+
+  &:active,
+  &:focus {
+    border: 1px solid #5aae88;
+  }
+}

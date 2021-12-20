@@ -1,0 +1,23 @@
+.MessageWrapper {
+  padding: 8px 0;
+  display: flex;
+  gap: 8px;
+  color: #FFFFFF;
+}
+
+.MessageUserAvatar {
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.MessageText {
+  white-space: pre;
+  margin: 0;
+  padding: 6px;
+  background-color: #1d4747;
+  border-radius: 8px;
+}

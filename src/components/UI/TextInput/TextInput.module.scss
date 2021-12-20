@@ -1,0 +1,19 @@
+.InputError {
+  color: #ec5f59;
+  margin: 2px 0;
+  font-size: 12px;
+  min-height: 16px;
+}
+
+.Input {
+  padding: 8px;
+  border-radius: 12px;
+  background-color: #0e2a2b;
+  border: 1px solid #1d4747;
+  color: #FFFFFF;
+
+  &:active,
+  &:focus {
+    border: 1px solid #5aae88;
+  }
+}
