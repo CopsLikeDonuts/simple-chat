@@ -1,0 +1,6 @@
+STEPS TO RUN THIS APP:
+
+1. Clone this repository (git clone https://github.com/CopsLikeDonuts/simple-chat.git yourAppName)
+2. Install dependencies (npm install)
+3. Run app (npm start)
+4. Enjoy :)
