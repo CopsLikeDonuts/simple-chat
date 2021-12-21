@@ -6,7 +6,6 @@ import ChatPage from "./pages/ChatPage";
 import ContentWrapper from "./components/ContentWrapper";
 import { Provider as StoreProvider } from 'react-redux'
 import configStore from "./store";
-import PrivateRoute from "./components/PrivateRoute";
 
 const store = configStore()
 
@@ -21,7 +20,6 @@ function App() {
                           <Route exact path={routeNames.home}>
                               <Home/>
                           </Route>
-                          <PrivateRoute path={routeNames.chat} component={<ChatPage/>} isLogged={Boolean(sessionStorage.getItem('userName'))}/>
                           <Route exact path={routeNames.chat}>
                               <ChatPage/>
                           </Route>
