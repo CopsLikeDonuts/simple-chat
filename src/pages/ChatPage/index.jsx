@@ -5,6 +5,8 @@ import Button from "../../components/UI/Button";
 import {useDispatch, useSelector} from "react-redux";
 import {addMessageRequest, getMessagesRequest} from "../../store/reducers/messages";
 import {selectMessages} from "../../store/selectors/messages";
+import routeNames from "../../routeNames";
+import {useHistory} from "react-router-dom";
 
 const chatPageHeight = 340
 
@@ -17,15 +19,23 @@ export default function ChatPage() {
     const [userName, setUserName] = useState('')
 
     const dispatch = useDispatch()
+    const history = useHistory()
+
+    useEffect(() => {
+        console.log('asd')
+        setUserName(sessionStorage.getItem('userName'))
+    }, [])
+
+    useEffect(() => {
+        if (!Boolean(sessionStorage.getItem('userName'))) {
+            history.push(routeNames.home)
+        }
+    },[])
 
     window.addEventListener('storage', (e) => dispatch(getMessagesRequest()))
 
     useEffect(() => {
         dispatch(getMessagesRequest())
-    }, [])
-
-    useEffect(() => {
-        setUserName(sessionStorage.getItem('userName'))
     }, [])
 
     const handleScroll = (e) => {
