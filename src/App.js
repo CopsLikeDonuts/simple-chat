@@ -1,11 +1,12 @@
 import Header from "./components/Header";
-import {BrowserRouter, Redirect, Route, Switch} from "react-router-dom";
+import {BrowserRouter, Route, Switch} from "react-router-dom";
 import routeNames from "./routeNames";
 import Home from "./pages/Home";
 import ChatPage from "./pages/ChatPage";
 import ContentWrapper from "./components/ContentWrapper";
 import { Provider as StoreProvider } from 'react-redux'
 import configStore from "./store";
+import PrivateRoute from "./components/PrivateRoute";
 
 const store = configStore()
 
@@ -20,10 +21,10 @@ function App() {
                           <Route exact path={routeNames.home}>
                               <Home/>
                           </Route>
+                          <PrivateRoute path={routeNames.chat} component={<ChatPage/>} isLogged={Boolean(sessionStorage.getItem('userName'))}/>
                           <Route exact path={routeNames.chat}>
                               <ChatPage/>
                           </Route>
-                          <Redirect to={routeNames.home}/>
                       </Switch>
                   </BrowserRouter>
               </ContentWrapper>
