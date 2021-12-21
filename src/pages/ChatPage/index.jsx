@@ -22,7 +22,6 @@ export default function ChatPage() {
     const history = useHistory()
 
     useEffect(() => {
-        console.log('asd')
         setUserName(sessionStorage.getItem('userName'))
     }, [])
 
@@ -32,7 +31,11 @@ export default function ChatPage() {
         }
     },[])
 
-    window.addEventListener('storage', (e) => dispatch(getMessagesRequest()))
+    useEffect(() => {
+        window.addEventListener('storage', (e) => {
+            dispatch(getMessagesRequest())
+        })
+    }, [])
 
     useEffect(() => {
         dispatch(getMessagesRequest())
